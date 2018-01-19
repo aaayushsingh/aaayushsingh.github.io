@@ -1,10 +1,25 @@
 
 
 var h1 = document.getElementById('center-div');
+var footer = document.getElementById('footer-elem');
 h1.innerText = "Hi,";
 
 var arr =["Hi,", "I'm Ayush", "Welcome to my website!"];
-console.log(arr.length);
+var dots = ['\uFEFF\uFEFF\uFEFF','.\uFEFF\uFEFF','..\uFEFF\uFEFF','...'];
+
+function loading() {
+    var tick = 0;
+    console.log('loading: ' + tick);
+    var timerFooter = setInterval(function () {
+        if(tick>50){
+            clearInterval(timerFooter);
+        }
+        footer.innerText = "loading" + dots[tick++%4];
+    }, 600);
+}
+loading();
+
+//footer.innerText = "loading..";
 var init = 0;
 
 function writer(i){
