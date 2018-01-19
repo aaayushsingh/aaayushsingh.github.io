@@ -4,8 +4,9 @@ body{
 .center-div{
     display:  none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: 2px dashed #f69c55;
-    font-size: 600%;
+    border: 2px;
+/*     font-size: 100%; */
+    font-size: 250%;
     text-align: center;
     text-justify: auto;
     position: absolute;

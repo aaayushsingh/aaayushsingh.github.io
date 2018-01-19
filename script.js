@@ -8,12 +8,13 @@ console.log(arr.length);
 var init = 0;
 
 function writer(i){
-    console.log("starting write!");
     if(i<arr.length){
         h1.innerText = arr[i];
         unfade(h1, function(result){
-            console.log("called back;")
-            writer(++i);
+            setTimeout(function(){
+                writer(++i);
+            },1000)
+
         });
     }
 }
@@ -26,18 +27,18 @@ function unfade(element,callback) {
         var timer = setInterval(function () {
             if (op >= 1){
                 clearInterval(timer);
-                fade(h1, function cb(value){
-                    callback('done');
-                });
+                setTimeout(function(){
+                    fade(h1, function cb(value){
+                        callback('done');
+                    });
+                },1800)
             }
             element.style.opacity = op;
             element.style.filter.opacity = op * 100 ;
-            op += op * 0.08;
-        }, 50);
+            op += op * 0.1;
+        }, 10);
 }
-//unfade(h1, function(result){
-//     console.log("called back!")
-// });
+
 
 function fade(element,callback) {
     var timer = setInterval(function () {
@@ -49,6 +50,6 @@ function fade(element,callback) {
         }
         element.style.opacity = op;
         element.style.filter.opacity = op * 100;
-        op -= op * 0.08;
-    }, 50);
+        op -= op * 0.1;
+    }, 10);
 }
