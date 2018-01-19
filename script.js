@@ -29,7 +29,6 @@ function writer(i){
             setTimeout(function(){
                 writer(++i);
             },1000)
-
         });
     }
 }
