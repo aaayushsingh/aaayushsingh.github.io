@@ -7,6 +7,7 @@ body{
     border: 2px dashed #f69c55;
     font-size: 600%;
     text-align: center;
+    text-justify: auto;
     position: absolute;
     top: 50%;
     left: 50%;
