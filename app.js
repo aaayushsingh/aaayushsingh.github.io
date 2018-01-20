@@ -1,11 +1,16 @@
-
-
 var h1 = document.getElementById('center-div');
 var footer = document.getElementById('footer-elem');
 h1.innerText = "Hi,";
 
 var arr =["Hi,", "I'm Ayush", "Welcome to my website!"];
-var dots = ['\uFEFF\uFEFF\uFEFF','.\uFEFF\uFEFF','..\uFEFF\uFEFF','...'];
+var dots = ['','.','..','...'];
+
+var contact = document.getElementById('contact-div');
+contact.addEventListener("click", function(){
+    h1.innerText = "Duh!";
+    h1.style.display = 'block';
+    h1.style.opacity = 1;
+});
 
 function loading() {
     var tick = 0;
