@@ -4,15 +4,19 @@
 <head>
     <link rel="stylesheet" href="app.css">
     <!-- It is important that the script is loaded after the HTML of the page -->
-    <!-- <script type="text/javascript" src="script.js"></script> -->
+    <script type="text/javascript" src="hello.js"></script>
 </head>
 
 <body>
     <div id="particles-js"></div>
-    <div id='center-div' style="display:none" class='center-div text-color'>
+    <div id='center-div main-text' style="display:none" class='center-div text-color'>
         Hello!
     </div>
     <div id='contact-div' style='display:block' class='text-color'>Contact</div>
+    <div id="contact-form" class="center-div text-color transparent-bordered" style="display: block">
+        <li>Name
+        <input type="text" name="contact_name" class="transparent-bordered" placeholder="Name" /></li>
+    </div>
 </body>
 <footer>
     <p id="footer-elem" class='text-color'></p>

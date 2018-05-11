@@ -6,15 +6,26 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 2px;
   /*     font-size: 100%; */
-  font-size: 250%;
+  
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+.main text{
+  font-size: 250%;
+}
 .text-color {
   -webkit-text-fill-color: white;
+}
+.transparent-bordered{
+  opacity: 0.34;
+  font-size: 50%;
+  border: rgba(255, 255, 255, 0.979)
+}
+.above-canvas {
+  z-index: 500;
 }
 #footer-elem {
   font-size: 8px;
