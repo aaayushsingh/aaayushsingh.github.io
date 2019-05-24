@@ -82,7 +82,7 @@ var dots = ["", ".", "..", "..."];
 
 var contact = document.getElementById("contact-div");
 contact.addEventListener("click", function() {
-  h1.innerText = "Duh!";
+  h1.innerText = "ayush0471@gmail.com";
   h1.style.display = "block";
   h1.style.opacity = 1;
 });
