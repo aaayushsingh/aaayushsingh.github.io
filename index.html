@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="app.css"> -->
     <!-- It is important that the script is loaded after the HTML of the page -->
     <!-- <script type="text/javascript" src="script.js"></script> -->
-</head>
+<!-- </head>
 
 <body>
     <div id="particles-js"></div>
@@ -21,4 +21,199 @@
 <script type="text/javascript" src="app.min.js"></script>
 
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayush Singh | Engineering Manager</title>
+  <meta name="description" content="Ayush Singh – Engineering Manager focused on backend systems, cloud architecture, and GenAI-driven internal platforms." />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue",
+                   Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    header {
+      margin-bottom: 64px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0 0 12px 0;
+      color: var(--text);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Ayush Singh</h1>
+      <p class="subtitle">
+          30+ years of experience in sleeping </br>
+        6+ years of experience building and scaling backend systems,
+        leading teams through high-growth phases, and driving cost-efficient cloud and GenAI platforms.
+      </p>
+
+      <div class="links">
+        <a href="https://linkedin.ayushsingh.in" target="_blank">LinkedIn</a>
+        <a href="https://github.ayushsingh.in" target="_blank">GitHub</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          Engineering Manager at ApnaKlub, where I’ve been part of the
+          core engineering leadership during a period of rapid scale and organizational transition.
+        </p>
+        <p>
+          My work spans backend architecture, cloud migrations, cost optimization, and introducing
+          GenAI-driven internal tools, while also owning people leadership, hiring, performance
+          reviews, and career growth for engineers.
+        </p>
+        <p class="muted">
+          I enjoy solving long standing technical problems, building resilient systems,
+          and helping engineers grow into strong, independent owners. Praised for my smart solutions to complex problems.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What I Focus On</h2>
+      <div class="card">
+        <ul>
+          <li>Backend systems & distributed architectures</li>
+          <li>Cloud infrastructure, migrations & cost optimization</li>
+          <li>Engineering leadership, team growth & execution</li>
+          <li>GenAI platforms, internal tooling & automation</li>
+          <li>Reliability, scalability & operational excellence</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Currently</h2>
+      <div class="card">
+        <p>
+          Leading engineering teams, shaping technical direction, and building scalable systems
+          that support fast business growth — while continuously exploring practical applications
+          of GenAI in real-world operations.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Ayush Singh
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
+
