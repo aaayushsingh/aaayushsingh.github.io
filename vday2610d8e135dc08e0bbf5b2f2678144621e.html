@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Akansha, Read This! 💕</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,27 +14,33 @@
             box-sizing: border-box;
         }
 
+        html {
+            background: #0f0f23;
+            height: 100%;
+        }
+
         body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            min-height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             overflow: hidden;
             position: relative;
+            background: #0f0f23;
         }
 
         /* Blurred hearts background */
         .hearts-bg {
             position: fixed;
-            top: 0;
+            top: calc(-1 * var(--safe-top, 50px));
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: calc(var(--full-height, 100vh) + var(--safe-top, 50px) + var(--safe-bottom, 50px));
             filter: blur(8px);
             z-index: 1;
             overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
         }
 
         .heart {
@@ -163,10 +169,10 @@
         /* Celebration overlay */
         .celebration {
             position: fixed;
-            top: 0;
+            top: calc(-1 * var(--safe-top, 50px));
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: calc(var(--full-height, 100vh) + var(--safe-top, 50px) + var(--safe-bottom, 50px));
             display: none;
             justify-content: center;
             align-items: center;
@@ -281,12 +287,31 @@
 
     <!-- Celebration overlay -->
     <div class="celebration" id="celebration">
-        <div class="celebration-text" id="celebrationText">Yay! I knew it! 💕</div>
-        <div class="celebration-subtext">Happy Valentine's Day, my love! 🥰</div>
+        <div class="celebration-text" id="celebrationText">Well, Obviously! 💕</div>
+        <div class="celebration-subtext">my Valentine 🥰</div>
         <div class="angry-text" id="angryText"></div>
     </div>
 
     <script>
+        // iOS Safari full-height fix using outerHeight
+        function updateFullHeight() {
+            const outerH = window.outerHeight || window.innerHeight;
+            const innerH = window.innerHeight;
+            // Calculate the extra space taken by Safari chrome
+            const safeTop = Math.max(0, (outerH - innerH) / 2);
+            const safeBottom = Math.max(0, (outerH - innerH) / 2);
+
+            document.documentElement.style.setProperty('--full-height', outerH + 20 + 'px');
+            document.documentElement.style.setProperty('--safe-top', safeTop + 'px');
+            document.documentElement.style.setProperty('--safe-bottom', safeBottom + 'px');
+        }
+
+        updateFullHeight();
+        window.addEventListener('resize', updateFullHeight);
+        window.addEventListener('orientationchange', updateFullHeight);
+        // Also update on scroll as Safari toolbar can hide/show
+        window.addEventListener('scroll', updateFullHeight);
+
         // Create floating hearts in background
         const heartsBg = document.getElementById('heartsBg');
         const heartEmojis = ['💖', '💕', '💗', '💓', '💝', '❤️', '🩷', '💘', '💞'];
@@ -321,7 +346,7 @@
 
             if (isAngry) {
                 celebrationText.innerHTML = "Fine! FINE! 😤💕";
-                angryText.innerHTML = "(But also... I love you too 🙄❤️)";
+                angryText.innerHTML = "(love you too... 🙄❤️)";
             } else {
                 celebrationText.innerHTML = "Yay! I knew it! 💕";
                 angryText.innerHTML = "";
